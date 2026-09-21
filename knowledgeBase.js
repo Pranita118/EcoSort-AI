@@ -1,0 +1,593 @@
+// Local waste knowledge base used for Demo Mode and client-side RAG retrieval.
+export const knowledgeBase = [
+  {
+    "id": "plastic-bottle",
+    "item": "Plastic Bottle",
+    "category": "Recyclable Waste",
+    "keywords": [
+      "plastic bottle",
+      "water bottle",
+      "soda bottle",
+      "pet bottle",
+      "juice bottle"
+    ],
+    "why": "Most plastic bottles are made of PET or HDPE, both of which are widely accepted recyclable plastics.",
+    "disposal": "Rinse and place in the dry/recyclable waste bin. Crush to save space where local rules allow.",
+    "avoid": "Do not leave liquid inside, and do not mix with wet waste.",
+    "reuse": "Reuse as a refill bottle, planter, or storage container before recycling.",
+    "score": 78,
+    "source": "Recycling Guide"
+  },
+  {
+    "id": "plastic-bag",
+    "item": "Plastic Bag",
+    "category": "Dry Waste",
+    "keywords": [
+      "plastic bag",
+      "polybag",
+      "shopping bag",
+      "carry bag"
+    ],
+    "why": "Thin plastic bags are low-value plastic film that most household recycling streams cannot process, though many grocery stores collect them separately.",
+    "disposal": "Place in dry waste, or drop at a store film-recycling point if available.",
+    "avoid": "Do not place in wet waste; it contaminates compostable material.",
+    "reuse": "Reuse as a bin liner or for storage before disposal.",
+    "score": 40,
+    "source": "Recycling Guide"
+  },
+  {
+    "id": "banana-peel",
+    "item": "Banana Peel",
+    "category": "Wet / Organic Waste",
+    "keywords": [
+      "banana peel",
+      "fruit peel",
+      "vegetable waste",
+      "food scraps",
+      "leftover food"
+    ],
+    "why": "Banana peels are biodegradable organic matter that breaks down naturally and enriches soil.",
+    "disposal": "Place in the wet/organic waste bin or a home compost pile.",
+    "avoid": "Do not mix with dry recyclables such as plastic or paper.",
+    "reuse": "Compost it into nutrient-rich soil, or use it in simple garden fertilizer.",
+    "score": 92,
+    "source": "Organic Waste Guide"
+  },
+  {
+    "id": "vegetable-waste",
+    "item": "Vegetable Waste",
+    "category": "Wet / Organic Waste",
+    "keywords": [
+      "vegetable waste",
+      "peels",
+      "kitchen scraps",
+      "leftovers"
+    ],
+    "why": "Vegetable trimmings decompose quickly and are ideal for composting.",
+    "disposal": "Place in a wet waste bin or compost bin.",
+    "avoid": "Avoid mixing with plastic wrappers or packaging.",
+    "reuse": "Home composting turns this into fertilizer within weeks.",
+    "score": 90,
+    "source": "Organic Waste Guide"
+  },
+  {
+    "id": "cardboard",
+    "item": "Cardboard Box",
+    "category": "Dry Waste",
+    "keywords": [
+      "cardboard",
+      "carton",
+      "box",
+      "packaging box"
+    ],
+    "why": "Cardboard is a paper-based recyclable material as long as it is clean and dry.",
+    "disposal": "Flatten and place in the dry/recyclable waste bin.",
+    "avoid": "Do not recycle cardboard that is soaked in oil or food waste; discard that portion separately.",
+    "reuse": "Reuse for storage, shipping, or craft projects before recycling.",
+    "score": 85,
+    "source": "Recycling Guide"
+  },
+  {
+    "id": "paper",
+    "item": "Paper",
+    "category": "Dry Waste",
+    "keywords": [
+      "paper",
+      "newspaper",
+      "notebook",
+      "office paper"
+    ],
+    "why": "Clean paper is one of the most recyclable dry-waste materials available.",
+    "disposal": "Place in the dry/recyclable waste bin.",
+    "avoid": "Do not recycle paper that is heavily soiled or laminated.",
+    "reuse": "Use both sides before recycling, or repurpose for notes and packing material.",
+    "score": 88,
+    "source": "Recycling Guide"
+  },
+  {
+    "id": "glass-bottle",
+    "item": "Glass Bottle",
+    "category": "Glass Waste",
+    "keywords": [
+      "glass bottle",
+      "glass jar",
+      "wine bottle",
+      "sauce jar"
+    ],
+    "why": "Glass is 100% recyclable and can be melted down repeatedly without losing quality.",
+    "disposal": "Rinse and place in a designated glass-collection bin.",
+    "avoid": "Do not mix broken glass with regular dry waste; wrap sharp pieces separately and label them.",
+    "reuse": "Reuse as storage containers, drinking glasses, or decor before recycling.",
+    "score": 80,
+    "source": "Glass Waste Guide"
+  },
+  {
+    "id": "metal-can",
+    "item": "Metal Can",
+    "category": "Metal Waste",
+    "keywords": [
+      "metal can",
+      "tin can",
+      "aluminum can",
+      "soda can",
+      "food can"
+    ],
+    "why": "Aluminum and steel cans are highly recyclable and retain material value.",
+    "disposal": "Rinse and place in the dry/recyclable waste bin or metal-collection point.",
+    "avoid": "Do not leave food residue inside, which can attract pests and contaminate other recyclables.",
+    "reuse": "Reuse as storage or planters before recycling.",
+    "score": 84,
+    "source": "Recycling Guide"
+  },
+  {
+    "id": "mobile-phone",
+    "item": "Mobile Phone",
+    "category": "E-Waste",
+    "keywords": [
+      "mobile phone",
+      "smartphone",
+      "old phone",
+      "cell phone"
+    ],
+    "why": "A mobile phone is an electronic device containing circuit boards, batteries, and metals that require specialized recovery.",
+    "disposal": "Take it to an authorized e-waste collection or recycling channel.",
+    "avoid": "Do not dispose of it with regular household waste; do not puncture or burn the battery.",
+    "reuse": "Repair, resell, donate, or refurbish if it still works.",
+    "score": 82,
+    "source": "E-Waste Guidelines"
+  },
+  {
+    "id": "laptop",
+    "item": "Laptop",
+    "category": "E-Waste",
+    "keywords": [
+      "laptop",
+      "notebook computer",
+      "old computer"
+    ],
+    "why": "Laptops contain batteries, circuit boards, and metals classified as e-waste requiring certified handling.",
+    "disposal": "Use an authorized e-waste collection or recycling channel.",
+    "avoid": "Do not throw it in general household waste or attempt to dismantle the battery yourself.",
+    "reuse": "Repair, reuse, donate, or refurbish if it is still functional.",
+    "score": 80,
+    "source": "E-Waste Guidelines"
+  },
+  {
+    "id": "charger",
+    "item": "Charger",
+    "category": "E-Waste",
+    "keywords": [
+      "charger",
+      "power adapter",
+      "cable"
+    ],
+    "why": "Chargers contain wiring and small electronic components that fall under e-waste.",
+    "disposal": "Drop off at an e-waste collection point.",
+    "avoid": "Do not discard with regular dry or wet waste.",
+    "reuse": "Keep as a spare or donate if it still works.",
+    "score": 75,
+    "source": "E-Waste Guidelines"
+  },
+  {
+    "id": "battery",
+    "item": "Used Battery",
+    "category": "Hazardous Waste",
+    "keywords": [
+      "battery",
+      "used battery",
+      "AA battery",
+      "lithium battery"
+    ],
+    "why": "Batteries contain heavy metals and chemicals that can leak into soil and water if disposed of improperly.",
+    "disposal": "Take to a designated battery or e-waste collection point.",
+    "avoid": "Never place batteries in regular household waste or incinerate them.",
+    "reuse": "Not reusable, but some retailers offer battery take-back programs.",
+    "score": 70,
+    "source": "Hazardous Waste Guide"
+  },
+  {
+    "id": "earphones",
+    "item": "Earphones",
+    "category": "E-Waste",
+    "keywords": [
+      "earphones",
+      "headphones",
+      "earbuds"
+    ],
+    "why": "Earphones contain small wiring, magnets, and sometimes batteries, classifying them as e-waste.",
+    "disposal": "Take to an e-waste collection point.",
+    "avoid": "Do not mix with dry or wet household waste.",
+    "reuse": "Repair a broken cable or donate working pairs.",
+    "score": 72,
+    "source": "E-Waste Guidelines"
+  },
+  {
+    "id": "keyboard",
+    "item": "Keyboard",
+    "category": "E-Waste",
+    "keywords": [
+      "keyboard",
+      "computer keyboard"
+    ],
+    "why": "Keyboards contain plastics and internal circuitry that require e-waste handling.",
+    "disposal": "Drop off at an authorized e-waste facility.",
+    "avoid": "Do not discard in general waste bins.",
+    "reuse": "Donate if functional; some parts can be reused for DIY projects.",
+    "score": 74,
+    "source": "E-Waste Guidelines"
+  },
+  {
+    "id": "mouse",
+    "item": "Computer Mouse",
+    "category": "E-Waste",
+    "keywords": [
+      "mouse",
+      "computer mouse"
+    ],
+    "why": "A computer mouse contains small circuit boards and plastic that belong in e-waste recycling.",
+    "disposal": "Take to an e-waste collection point.",
+    "avoid": "Do not place in household dry waste.",
+    "reuse": "Donate if it still works.",
+    "score": 74,
+    "source": "E-Waste Guidelines"
+  },
+  {
+    "id": "clothes",
+    "item": "Old Clothes",
+    "category": "Textile Waste",
+    "keywords": [
+      "clothes",
+      "old clothes",
+      "fabric",
+      "garments"
+    ],
+    "why": "Textiles can often be reused or repurposed rather than discarded, reducing landfill volume.",
+    "disposal": "Donate, or place in a textile-recycling collection bin if beyond reuse.",
+    "avoid": "Avoid mixing damp or mildewed clothing with dry recyclables.",
+    "reuse": "Donate wearable clothes, or repurpose into cleaning rags.",
+    "score": 76,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "shoes",
+    "item": "Old Shoes",
+    "category": "Textile Waste",
+    "keywords": [
+      "shoes",
+      "old shoes",
+      "footwear"
+    ],
+    "why": "Shoes are made of mixed materials and are often reusable or recyclable through specific textile programs.",
+    "disposal": "Donate or use a shoe take-back/recycling program where available.",
+    "avoid": "Do not mix with wet waste.",
+    "reuse": "Donate wearable pairs to reduce textile waste.",
+    "score": 70,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "medicine-packaging",
+    "item": "Medicine Packaging",
+    "category": "Hazardous Waste",
+    "keywords": [
+      "medicine packaging",
+      "medicine strip",
+      "blister pack",
+      "expired medicine"
+    ],
+    "why": "Medicine packaging and expired medicines can contain chemical residues that require careful handling.",
+    "disposal": "Return to a pharmacy take-back program where available, or follow local hazardous-waste guidance.",
+    "avoid": "Do not flush medicines down the toilet or mix with regular household waste.",
+    "reuse": "Not reusable.",
+    "score": 55,
+    "source": "Hazardous Waste Guide"
+  },
+  {
+    "id": "paint-container",
+    "item": "Paint Container",
+    "category": "Hazardous Waste",
+    "keywords": [
+      "paint container",
+      "paint can",
+      "paint tin"
+    ],
+    "why": "Leftover paint and its containers can contain solvents and heavy metals that are hazardous if not handled correctly.",
+    "disposal": "Dry out any remaining paint completely, then take to a hazardous-waste collection point.",
+    "avoid": "Never pour liquid paint down a drain or into general waste.",
+    "reuse": "Donate unused, sealed paint if still usable.",
+    "score": 50,
+    "source": "Hazardous Waste Guide"
+  },
+  {
+    "id": "sanitary-waste",
+    "item": "Sanitary Product",
+    "category": "Sanitary Waste",
+    "keywords": [
+      "sanitary pad",
+      "sanitary waste",
+      "diaper",
+      "menstrual product"
+    ],
+    "why": "Sanitary products are considered biohazard-adjacent waste and need to be wrapped and isolated from recyclables.",
+    "disposal": "Wrap securely in paper and place in a designated sanitary waste bin.",
+    "avoid": "Never flush sanitary products, and never mix with dry recyclable waste.",
+    "reuse": "Not reusable.",
+    "score": 35,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "used-tissue",
+    "item": "Used Tissue",
+    "category": "Sanitary Waste",
+    "keywords": [
+      "used tissue",
+      "napkin",
+      "paper towel"
+    ],
+    "why": "Used tissues are considered contaminated paper and generally cannot be recycled with clean paper.",
+    "disposal": "Dispose of in general/sanitary waste, not the recycling bin.",
+    "avoid": "Do not mix with dry recyclable paper.",
+    "reuse": "Not reusable.",
+    "score": 30,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "food-leftovers",
+    "item": "Food Leftovers",
+    "category": "Wet / Organic Waste",
+    "keywords": [
+      "food leftovers",
+      "cooked food waste",
+      "plate waste"
+    ],
+    "why": "Leftover food is organic and biodegradable, suitable for composting or organic waste collection.",
+    "disposal": "Place in the wet/organic waste bin.",
+    "avoid": "Do not mix with plastic wrappers or packaging.",
+    "reuse": "Consider portioning meals better to reduce food waste, or compost scraps.",
+    "score": 65,
+    "source": "Organic Waste Guide"
+  },
+  {
+    "id": "broken-electronics",
+    "item": "Broken Electronics",
+    "category": "E-Waste",
+    "keywords": [
+      "broken electronics",
+      "broken device",
+      "damaged gadget"
+    ],
+    "why": "Even non-functional electronics contain recoverable metals and hazardous components that need certified processing.",
+    "disposal": "Take to an authorized e-waste recycler.",
+    "avoid": "Do not dismantle hazardous components yourself or discard with household waste.",
+    "reuse": "Salvage functional parts where possible before recycling the rest.",
+    "score": 68,
+    "source": "E-Waste Guidelines"
+  },
+  {
+    "id": "light-bulb",
+    "item": "Light Bulb",
+    "category": "Hazardous Waste",
+    "keywords": [
+      "light bulb",
+      "CFL bulb",
+      "tube light",
+      "fluorescent bulb"
+    ],
+    "why": "CFL and fluorescent bulbs contain trace mercury and require careful handling to avoid contamination.",
+    "disposal": "Take to a hazardous-waste or e-waste collection point.",
+    "avoid": "Do not break the bulb or dispose of it in general waste.",
+    "reuse": "Not reusable.",
+    "score": 45,
+    "source": "Hazardous Waste Guide"
+  },
+  {
+    "id": "styrofoam",
+    "item": "Styrofoam / Thermocol",
+    "category": "Dry Waste",
+    "keywords": [
+      "styrofoam",
+      "thermocol",
+      "foam packaging"
+    ],
+    "why": "Styrofoam is technically plastic but is rarely accepted by standard recycling due to low density and contamination risk.",
+    "disposal": "Place in dry waste; check for a specialty foam-recycling drop-off if available.",
+    "avoid": "Do not mix with wet waste or burn it, as burning releases toxic fumes.",
+    "reuse": "Reuse intact pieces as packing material.",
+    "score": 38,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "cigarette-butt",
+    "item": "Cigarette Butt",
+    "category": "Other / Uncertain",
+    "keywords": [
+      "cigarette butt",
+      "cigarette"
+    ],
+    "why": "Cigarette filters contain plastic fibers and chemical residue and are not recyclable through household streams.",
+    "disposal": "Dispose of in general waste after ensuring it is fully extinguished.",
+    "avoid": "Never discard on the ground; residue can contaminate soil and water.",
+    "reuse": "Not reusable.",
+    "score": 20,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "egg-shells",
+    "item": "Egg Shells",
+    "category": "Wet / Organic Waste",
+    "keywords": [
+      "egg shells",
+      "eggshell"
+    ],
+    "why": "Eggshells are biodegradable and add calcium to compost.",
+    "disposal": "Place in the wet/organic waste or compost bin.",
+    "avoid": "Do not mix with dry recyclables.",
+    "reuse": "Crush and use as natural garden fertilizer.",
+    "score": 88,
+    "source": "Organic Waste Guide"
+  },
+  {
+    "id": "tea-bags",
+    "item": "Tea Bags",
+    "category": "Wet / Organic Waste",
+    "keywords": [
+      "tea bag",
+      "used tea leaves",
+      "coffee grounds"
+    ],
+    "why": "Used tea leaves and coffee grounds are organic material well suited to composting.",
+    "disposal": "Place in the wet/organic waste bin.",
+    "avoid": "Check if the bag contains plastic mesh; remove it before composting.",
+    "reuse": "Use as compost or natural fertilizer for plants.",
+    "score": 85,
+    "source": "Organic Waste Guide"
+  },
+  {
+    "id": "aerosol-can",
+    "item": "Aerosol Can",
+    "category": "Hazardous Waste",
+    "keywords": [
+      "aerosol can",
+      "spray can",
+      "deodorant can"
+    ],
+    "why": "Aerosol cans may be pressurized and contain propellants that are hazardous if crushed or incinerated.",
+    "disposal": "Ensure it is fully empty, then dispose of via a hazardous-waste or metal-recycling channel.",
+    "avoid": "Never puncture or burn an aerosol can.",
+    "reuse": "Not reusable.",
+    "score": 42,
+    "source": "Hazardous Waste Guide"
+  },
+  {
+    "id": "wooden-furniture",
+    "item": "Wooden Furniture",
+    "category": "Dry Waste",
+    "keywords": [
+      "wooden furniture",
+      "old furniture",
+      "wood scrap"
+    ],
+    "why": "Untreated wood is biodegradable and can sometimes be repurposed or recycled through bulky-waste programs.",
+    "disposal": "Contact a bulky-waste collection service or a furniture donation/recycling program.",
+    "avoid": "Do not burn treated or painted wood, as it may release toxic fumes.",
+    "reuse": "Repair, refinish, or donate before disposal.",
+    "score": 60,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "ceramic",
+    "item": "Ceramic / Crockery",
+    "category": "Other / Uncertain",
+    "keywords": [
+      "ceramic",
+      "crockery",
+      "broken plate",
+      "broken cup"
+    ],
+    "why": "Ceramics have a different melting point than glass and are generally not accepted in glass recycling.",
+    "disposal": "Dispose of in general dry waste, wrapped to prevent injury.",
+    "avoid": "Do not mix with glass-recycling bins.",
+    "reuse": "Repurpose unbroken pieces as planters or garden decor.",
+    "score": 35,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "rubber",
+    "item": "Rubber / Old Tyre",
+    "category": "Other / Uncertain",
+    "keywords": [
+      "rubber",
+      "old tyre",
+      "tire"
+    ],
+    "why": "Rubber is durable and slow to biodegrade; specialized recyclers can shred it for reuse in flooring or fuel.",
+    "disposal": "Take to a tyre retailer or specialized rubber-recycling facility.",
+    "avoid": "Never burn rubber, as it releases toxic smoke.",
+    "reuse": "Repurpose as planters, swings, or garden edging.",
+    "score": 40,
+    "source": "Waste Segregation Guide"
+  },
+  {
+    "id": "printer-cartridge",
+    "item": "Printer Cartridge",
+    "category": "E-Waste",
+    "keywords": [
+      "printer cartridge",
+      "ink cartridge",
+      "toner"
+    ],
+    "why": "Cartridges contain plastic housings and chemical residues that qualify them as e-waste.",
+    "disposal": "Return to a manufacturer take-back program or e-waste collection point.",
+    "avoid": "Do not discard with regular household waste.",
+    "reuse": "Many brands offer refill programs.",
+    "score": 65,
+    "source": "E-Waste Guidelines"
+  },
+  {
+    "id": "cooking-oil",
+    "item": "Used Cooking Oil",
+    "category": "Hazardous Waste",
+    "keywords": [
+      "cooking oil",
+      "used oil",
+      "frying oil"
+    ],
+    "why": "Poured down drains, oil can clog pipes and contaminate water systems.",
+    "disposal": "Store in a sealed container and take to a used-oil collection point if available.",
+    "avoid": "Never pour oil down the sink or drain.",
+    "reuse": "Some community programs convert used oil into biodiesel.",
+    "score": 48,
+    "source": "Hazardous Waste Guide"
+  },
+  {
+    "id": "milk-carton",
+    "item": "Milk Carton",
+    "category": "Recyclable Waste",
+    "keywords": [
+      "milk carton",
+      "tetra pack",
+      "juice carton"
+    ],
+    "why": "Cartons are made of layered paperboard, plastic, and sometimes foil, requiring specialized carton-recycling streams.",
+    "disposal": "Rinse and flatten, then place in dry/recyclable waste or a carton-specific bin.",
+    "avoid": "Do not leave liquid residue inside.",
+    "reuse": "Reuse clean cartons for small storage or craft projects.",
+    "score": 66,
+    "source": "Recycling Guide"
+  },
+  {
+    "id": "wire-cable",
+    "item": "Electrical Wire / Cable",
+    "category": "E-Waste",
+    "keywords": [
+      "wire",
+      "cable",
+      "electrical wire"
+    ],
+    "why": "Wires contain copper and insulation materials that are recoverable through e-waste recycling.",
+    "disposal": "Take to an e-waste or scrap-metal collection point.",
+    "avoid": "Do not burn wires to strip insulation; this releases toxic fumes.",
+    "reuse": "Keep spares for future use if undamaged.",
+    "score": 62,
+    "source": "E-Waste Guidelines"
+  }
+];
